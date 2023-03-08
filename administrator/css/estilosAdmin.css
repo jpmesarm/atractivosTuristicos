@@ -1,0 +1,273 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background: #fff;
+	font-family: 'Poppins', sans-serif;
+}
+a{
+	text-decoration: none;
+}
+.cabeceraPrincipal{
+	background: #EDEFFC;
+	display: flex;
+	flex-wrap: wrap;
+}
+.logoCabecera{
+  flex: 1 1 1px;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+}
+.widgetsCabecera{
+  padding: 5px 20px;
+  flex: 1 1 60%;
+  direction: rtl;
+  display: flex;
+  align-items: center;
+}
+.contenedorPrincipal{
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+}
+h1{
+	padding: 0.2em 0.3em;
+	font-size: 1.8em;
+	font-weight: 100;
+	color: #256464;
+}
+h5{
+	font-weight: 100;
+	padding: 0 10px;
+}
+.menuAdmin{
+  flex: 1 1 1px;
+  background-color: #f2f2f2;
+  padding: 10px 20px;
+}
+.contenidoPrinipal{
+  flex: 1 1 70%;
+  background-color: #fff;
+  padding: 1em;
+}
+
+.menuAdmin a{
+  display: block;
+  color: #04B9FF;
+  text-decoration: none;
+  font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 100;
+	font-size: 13px;
+  line-height: 30px;
+  transition: 0.5s;
+}
+.menuAdmin a:hover{
+	transition: 0.9s;
+	color: #fff;
+	padding-left: 10px;
+	background-color: rgba(20, 86, 46, 0.3);
+}
+
+.espacioMenu{
+	border-bottom: solid 1px #ccc;
+	width: 100%;
+}
+
+footer.piePagina{
+	background-color: #1D1D1D;
+	color: #A3A3A3;
+	text-align: center;
+}.piePagina h6{
+	padding: 2em;
+}
+
+/**************************************/
+/* ----------- TABLAS --------------- */
+/**************************************/
+.tablecud{
+	border-collapse: collapse;
+  width: 100%;
+}
+.tablecud td, .tablecud th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.tablecud tr:nth-child(even){background-color: #f2f2f2;}
+
+.tablecud tr:hover {background-color: #ddd;}
+
+.tablecud th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #293855;
+  text-transform: uppercase;
+  color: white;
+}
+
+.tablecud2{
+	border-collapse: collapse;
+  font-size: 11px;
+}
+.tablecud2 td, .tablecud2 th {
+  border: 1px solid #ddd;
+  padding: 1px;
+}
+.tablecud2 tr:nth-child(even){background-color: #f2f2f2;}
+
+.tablecud2 tr:hover {background-color: #ddd;}
+
+.tablecud2 th {
+  padding-top:2px ;
+  padding-bottom:2px ;
+  text-align: left;
+  background-color: #293855;
+  text-transform: uppercase;
+  color: white;
+}
+.tablecud2 td {
+	padding: 4px !important;
+}
+
+.txtcentrado{
+	text-align: center;
+}
+.desactivado{
+	color: #ff0000;
+}
+/**************************************/
+/* ----------- INPUTS --------------- */
+/**************************************/
+.grupoInput{
+	width: 95%;
+	padding: 0em 1em;
+}
+label{
+	color: #4265D6;
+	font-size: 12px;
+}
+.formulario input, .formulario select {
+	width: 100%;
+	margin-bottom: 5px;
+	height: 32px;
+	font-size: 12px;
+	line-height: 52px;
+	/*text-align: center;*/
+	padding-left: 10px;
+	border: 1px solid #BBBBBB;
+	border-radius: 5px;
+}
+.formulario input[type="radio"] {
+	width: 10%;
+	margin-bottom: 5px;
+	height: 15px;
+	font-size: 12px;
+	line-height: 52px;
+	text-align: center;
+	border: 1px solid #BBBBBB;
+	border-radius: 5px;
+}
+form .btn-submit {
+	padding: 0 20px;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	color: #fff;
+	background: #5E7DE3;
+	border-radius: 3px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	cursor: pointer;
+	transition: .3s ease all;
+}
+
+form .btn-submit:hover {
+	background: rgba(94,125,227, .9);
+}
+
+.identado{
+	padding: 0 0 0 20px;
+}
+@media only screen and (max-width: 600px) {
+	.grupoInput{
+		width: 100%;
+		padding: 0.1em 1em;
+	}
+	input, select {
+		width: 90%;
+	}
+
+}
+/**************************************/
+/* --------  DETALLE ENCUESTA ------ */
+/**************************************/
+.encuestaDetalle{
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 15px;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+	display: block;
+}
+.detalleResultados{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.grupoResult{
+	background-color: #F3F1F1;
+	width: 25%;
+	display: block;
+	margin: 4px;
+	border-radius: 10px;
+	padding: 15px;
+}
+.detalleEmpresa{
+	width: 100%;
+	background-color: #0184CA;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	color: #fff;
+}
+.item{
+	padding: 15px;
+	display: inline-block;
+	width: 20%;
+	vertical-align: middle;
+}
+.tituloEmpresa{
+	padding: 15px;
+	display: inline-block;
+	vertical-align: middle;
+	width: 50%;
+}
+.valorResult{
+	font-size: 25px;
+	font-weight: 800;
+}
+.textoMediano{
+	font-size: 15px !important;
+}
+.valorVerde{
+	color: #00A92C;
+}
+.valorAmarillo{
+	color: #C59C13;
+}
+.valorRojo{
+	color: #ff0000;
+}
+.centrado{
+	text-align: center;
+}
+
+.boxCharts{
+	width: 90%;
+	margin: 0 auto;
+	display: flex;
+}
+.itemBox{
+	width: 45%;
+}

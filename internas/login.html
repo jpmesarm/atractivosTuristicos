@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jornadas de Desarrollo de Software</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Noto+Sans+JP&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="../css/estilos.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" />
+
+    <link rel="icon" href="../images/logo.png" sizes="32x32" />
+    <link rel="icon" href="../images/logo.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="../images/logo.png" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/script.js"></script>
+  </head>
+  <body>
+    <div>
+      <nav class="navbar" id="menuPrincipal">
+        <div class="contenedor">
+          <div class="logo logo2" id="logotipo"></div>
+          <a href="../">Inicio</a>
+          <a href="../#art1">Proyecto</a>
+          <a href="../#art2">Resultados</a>
+          <a href="../#art3">Investigadores</a>
+          <a href="login.html">Login</a>
+        </div> 
+      </nav>
+      <div class="contenedor-imagen">
+        <a href="#blog">
+          <img src="../images/slider2.jpg" alt="Slider" />
+        </a>
+      </div>
+    <main id="blog">
+      <div class="contenedor">
+        <div class="contenido contenedor">
+          <div class="post">
+            <h1 class="titulo" id="art1">Ingreso a la adminsitración</h1>
+            <p class="fecha">Accede a la información de tu evaluación</p>
+            <div class="postCard">
+              <article class="card51">
+              <h2>Datos de acceso</h2>
+              <form method="post" action="../dll/validar.php" class="camposform">
+                <div class="grupoInput">
+                  <label class="form-label" for="correo">Correo</label>
+                  <input type="email" name="correo" class="caja" id="correo" placeholder="Ingrese su correo">
+                </div>
+                <div class="grupoInput">
+                  <label class="form-label" for="clave">Contraseña</label>
+                  <input type="password" class="caja" name="clave" id="clave" placeholder="Ingrese su clave">
+                </div><br>
+                <div class="grupoInput">
+                 <button type="submit" value="Procesar" class="btn btn-primary">Ingresar</button>
+                </div>
+              </form>
+            </article>
+            <article class="card51">
+              <img src="../images/registro2.jpg">
+            </article>
+          </div>
+          </div>
+
+          <div class="espacio"></div>
+        </div>
+      </div>
+    </main>
+    <div class="post fullwidth bggris">
+            <h1 class="titulo txtceleste" id="art4">En colaboración con:</h1>
+            <div class="postconferencia">
+             <img src="../images/logo-viae.png">
+             <img src="../images/logo-utpl.png">
+             <img src="../images/logo-mpe.png">
+           </div><br><br><br>
+          </div>
+    <footer class="piePagina">
+      <h6>Derechos Reservados UTPL 2022</h6>
+    </footer>
+    </div>
+  </body>
+</html>
