@@ -26,3 +26,24 @@
 - Ejecular el .sql que se encuentra en el repositorio de github en la base de datos creada en el paso anterior
 - Edicar el archivo config.php ubicado en el directorio  **_dll/config.php_** con los nuevos datos de la base de datos
 - Cargar los archivos de la aplicación en el servidor web de producción 
+
+**ESTRUCTURA DE DIRECTORIOS DE LA APLICACIÓN**
+> La aplicación web esta compuesta con los siguientes directorios:
+
+- **administrator/** Directorio conde se encuentra los archivos de la administración
+- **dll/** Directorio con los archivos de configuración y gestión de la DB.
+- **internas/** Directorio de los archivos del portal web que es accedido por todos los internautas
+-  **images/** Directorio con los archivos multimedia del portal 
+-  **css/** Directorio con las hojas de estilo del portal 
+-  **index.html** Es el archivo principal que carga la aplicación web por parte del servidor web apache
+
+**MÓDULOS DE LA APLICACIÓN**
+> La aplicación web consta con los siguientes módulos:
+
+- Portal web 
+- Módulo de acceso a travez de lores
+- Gestión de usuarios 
+- Módulo de catalogos, Parroquias, Cantones y Provincias
+- Módulo de la Ficha del atractivo tirístico 
+- Módulo del perfil de usuario
+- Cerrar sesión
