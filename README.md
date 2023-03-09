@@ -47,3 +47,5 @@
 - Módulo de la Ficha del atractivo tirístico 
 - Módulo del perfil de usuario
 - Cerrar sesión
+
+![This is an image](https://github.com/jpmesarm/atractivosTuristicos/blob/main/images/atractivo1.jpg)
