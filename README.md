@@ -48,4 +48,8 @@
 - Módulo del perfil de usuario
 - Cerrar sesión
 
-![This is an image](https://github.com/jpmesarm/atractivosTuristicos/blob/main/images/atractivo1.jpg)
+**Pantalla del portal web
+![This is an image](https://github.com/jpmesarm/atractivosTuristicos/blob/main/images/portal.jpg)
+
+**Pantallas del sistema de administración
+![This is an image](https://github.com/jpmesarm/atractivosTuristicos/blob/main/images/administrator.jpg)
