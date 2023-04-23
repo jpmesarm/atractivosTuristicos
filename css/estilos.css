@@ -63,8 +63,8 @@ body {
 }
 
 .navbar a:hover {
-  background: #256464;
-  color: #fff;
+  background: #00335D;
+  color: #eaab00;
   text-decoration: none;
 }
 .bgSiteMenu a{
@@ -180,12 +180,12 @@ main .contenido p {
 .justificado{
   text-align: justify;
 }
-main .contenido .titulo {
+main .contenido .titulo, main .post .titulo{
   font-family: "Montserrat", sans-serif;
   font-weight: normal;
   padding-top: 40px;
   font-size: 39px;
-  color: #256464;
+  color: #003f72;
 }
 
 main .contenido .fecha {
@@ -267,18 +267,53 @@ aside .indice a {
   background: #ACFFF0;
 }
 .bggris{
-  background-color: #2B2B2B;
+  background-color: #00335D;
 }
 .txtceleste{
   color: #707EC7;
   padding: 1.5em 0;
 }
+.txtamarillo{
+  color: #eaab00 !important;
+  padding: 1.5em 0;
+}
+.txtgris{ color: #6E778E; padding-bottom: 1em}
 .fullwidth{
   width: 100%;
 }
 .post img{
   padding: 0 0em;
 }
+
+/* * ============================== */
+/* * =====     INDICADORES   ====== */
+/* * ============================== */
+.indicadorbox{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 4em;
+}
+.indicador{
+  width: 20%;
+  border: 1px solid #203C81;
+  border-radius: 10px;
+}
+.numIndicador{
+  font-size: 3em;
+  font-weight: bold;
+  color: #eaab00;
+}
+.titleIndicador{
+  font-size: 1em;
+  color: #f2f2f2;
+  padding-bottom: 1em;
+}
+.centrado{
+  text-align: center;
+}
+
 /* * ============================== */
 /* * =====  TABLAS DE DATOS  ====== */
 /* * ============================== */
@@ -312,7 +347,7 @@ tr:hover{
 /* * ========= BOTONES ============ */
 /* * ============================== */
 .buttonAzul {
-  background-color: #008CBA; 
+  background-color: #00335D; 
   border: none;
   color: white;
   padding: 15px 32px;
@@ -329,7 +364,7 @@ tr:hover{
 /* * ========== FOOTER ============ */
 /* * ============================== */
 .piePagina {
-  background: #000;
+  background: #00335D;
   color: #ccc;
 }
 h6{
@@ -359,5 +394,23 @@ h6{
 
   main .contenedor {
     flex-direction: column;
+  }
+
+  .postCard{
+    display: block;
+  }
+
+  .card1{
+    width: 100%;
+  }
+
+  .indicadorbox{
+    display: block;
+    width: 90%;
+    padding-bottom: 4em;
+  }
+  .indicador{
+    width: 90%;
+    margin-bottom: 1em;
   }
 }

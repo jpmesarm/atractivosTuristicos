@@ -13,7 +13,11 @@ class dataTest_controller{
 		$this->Usuario=$user;
 		$this->Clave=$pass;
 	}
-    
+    public function RemoveSpecialChar($str)
+    {
+        $res = preg_replace('/[0-9\@#\&\;\" "]+/', '', $str);
+        return $res;
+    }
     public function CreatePlace()
     {
         $user = new DataTestModel();
@@ -36,8 +40,34 @@ class dataTest_controller{
             $user->setTelfadmin($_POST['telfadmin']);
             $user->setCorreoadmin($_POST['correoadmin']);
 
+            $nameImage=$this->RemoveSpecialChar($_FILES['imagen']['name']);
+            $user->setImagen($nameImage);
 
-            $userResponse = $user->AddPlace();
+
+            $errores = "";
+            if(($_FILES['imagen']['type'] != 'image/png') AND ($_FILES['imagen']['type'] != 'image/jpeg')){
+                $errores .= "- La imagen debe ser de la extensión PNG o JPG";
+            }
+             
+            if($_FILES['imagen']['size'] >= 2097152){ // 2MB
+                $errores .= "- La imagen debe ser menos de 2 Mb.";
+            }
+             
+            if(empty($errores)){
+               // $nameImage=$this->RemoveSpecialChar($_FILES['imagen']['name']);
+                $path = "imagenes/". basename($nameImage); 
+                if(move_uploaded_file($_FILES['imagen']['tmp_name'], $path)) {
+                    echo "El archivo ".  basename( $_FILES['imagen']['name']). " ha sido subido";
+                    $userResponse = $user->AddPlace();
+                } else{
+                    echo "El archivo no se ha subido correctamente";
+                }
+            }else{
+                echo $errores;
+            }
+
+
+            
             if ($userResponse == 1) // exitoso
             {
                 echo "<script>location.href='../views/libraryView.php?action=dataTest'</script>";
@@ -127,7 +157,32 @@ class dataTest_controller{
             $user->setCorreoadmin($_POST['correoadmin']);
             $user->setIdCaracteristica($_POST['idCar']);
 
-            $userResponse = $user->UpdatePlaceInfo();
+            $nameImage=$this->RemoveSpecialChar($_FILES['imagen']['name']);
+            $user->setImagen($nameImage);
+
+
+            $errores = "";
+            if(($_FILES['imagen']['type'] != 'image/png') AND ($_FILES['imagen']['type'] != 'image/jpeg')){
+                $errores .= "- La imagen debe ser de la extensión PNG o JPG";
+            }
+             
+            if($_FILES['imagen']['size'] >= 2097152){ // 2MB
+                $errores .= "- La imagen debe ser menos de 2 Mb.";
+            }
+             
+            if(empty($errores)){
+               // $nameImage=$this->RemoveSpecialChar($_FILES['imagen']['name']);
+                $path = "imagenes/". basename($nameImage); 
+                if(move_uploaded_file($_FILES['imagen']['tmp_name'], $path)) {
+                    echo "El archivo ".  basename( $_FILES['imagen']['name']). " ha sido subido";
+                    $userResponse = $user->UpdatePlaceInfo();
+                } else{
+                    echo "El archivo no se ha subido correctamente";
+                }
+            }else{
+                echo $errores;
+            }
+
             if ($userResponse == 1) // exitoso
             {
                 echo "<script>location.href='../views/libraryView.php?action=dataTest'</script>";
@@ -167,12 +222,12 @@ class dataTest_controller{
         $data = $user->GetTipo();
         return $data;
     }
-    public function DeleteTest($testId)
+    public function DeleteTest($testId,$idparr,$idtipo)
     {
         $user = new DataTestModel();
-        $userResponse = $user->DelTest($testId);
+        $userResponse = $user->DelTest($testId,$idparr,$idtipo);
         if ($userResponse) {
-	        echo "<script>location.href='../views/libraryView.php?action=dataTest'</script>";
+	        echo "<script>location.href='../views/libraryView.php?action=dataTest&idparr=idparr&idtipo=$idtipo'</script>";
         }
         
     }

@@ -76,7 +76,7 @@
 	    echo  "<td class='txtcentrado'><a href='libraryView.php?action=actividades_detail&testId=".$dataList[$i]['idatractivo']."&idCar=".$dataList[$i]['turistica_idturistica']."' class='$retVal'><i class='fa-solid fa-person-walking' title='Actividades que se practican'></i></a></td>";
 	    echo  "<td class='txtcentrado'><a href='libraryView.php?action=promo_reg_detail&testId=".$dataList[$i]['idatractivo']."&idCar=".$dataList[$i]['turistica_idturistica']."' class='$retVal'><i class='fa-solid fa-people-arrows' title='Promoción y comercialización del atractivo'></i></a></td>";
 	    echo  "<td class='txtcentrado'><a href='libraryView.php?action=test_result&testId=".$dataList[$i]['idatractivo']."'><i class='fa-solid fa-pen-to-square' title='Editar'></i></a></td>";
-	    echo  "<td class='txtcentrado'><a href='dataTest_delete.php?testId=".$dataList[$i]['idatractivo']."'><i class='fa-solid fa-trash-can' title='Borrar'></i></a></td>";
+	    echo  "<td class='txtcentrado'><a href='dataTest_delete.php?testId=".$dataList[$i]['idatractivo']."&idparr=".$dataList[$i]['parroquia_idparroquia']."&idtipo=".$dataList[$i]['subtipo_idsubtipo']."'><i class='fa-solid fa-trash-can' title='Borrar'></i></a></td>";
 	    echo "</tr>";
   	}
 ?>

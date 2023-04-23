@@ -14,7 +14,7 @@
 ?>
 <h1>Atrativo Turístico: <?php echo $lista[1]['nombre']; ?></h1>
 
-<form method="post" action="" class="formulario">
+<form method="post" action="" enctype="multipart/form-data" class="formulario">
 <section class="boxCharts">
 <div class="itemBox">
 	<div class="grupoInput">
@@ -122,6 +122,11 @@
 	<div class="grupoInput">
 		<label for="correoadmin">Correo administrador</label>
 		<input type="email" name="correoadmin" id="correoadmin" placeholder="Ingrese el correo administrador" value="<?php echo $lista[1]['correoAdmin']; ?>">
+	</div>
+	<div class="grupoInput">
+		<label for="imagenAtractivo">Nueva imagen del atractivo turístico</label>
+		<input type="file" name="imagen" id="imagenAtractivo">
+		<img src="imagenes/<?php echo $lista[1]['imagen']; ?>" width="100px">
 	</div>
 	<div class="grupoInput">
 	 <button type="submit" value="Procesar" class="btn-submit"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>

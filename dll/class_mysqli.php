@@ -76,6 +76,27 @@ class clase_mysqli{
 		echo "</table>";
 	}
 
+	function consultaXmlMapa(){
+		echo '<markers>';
+		$ind=0;
+
+		while ($row=mysqli_fetch_array($this->Consulta_ID)){
+			  echo '<marker ';
+			  echo 'idmapa="' . $row[0] . '" ';
+			  echo 'persona="' . $row[1] . '" ';
+			  echo 'imagen="' . $row[16] . '" ';
+			  echo 'descripcion="Administrador: ' . parseToXML($row[11]) . '" ';
+			  echo 'direccion="Dir: Barrio '. parseToXML($row[3]) . ','. parseToXML($row[4]) .'" ';
+			  echo 'lat="' . $row[7] . '" ';
+			  echo 'lng="' . $row[8] . '" ';
+			  echo '/>';
+			  $ind = $ind + 1;
+		}
+
+		echo '</markers>';
+		
+	}
+
 	//Función para obtener listado de libros
     function GetData11() 
 	{
@@ -165,10 +186,30 @@ class clase_mysqli{
 	}
 
 	function consulta_json(){
-		while ($row = mysqli_fetch_array($this->Consulta_ID)) {
+		$this->consulta("select count(*) from atractivo");
+		$datos1=$this->consulta_lista();
+		$this->consulta("select count(*) 
+						from atractivo a, subtipo st, tipo t
+						where a.subtipo_idsubtipo=st.idsubtipo and st.tipo_idtipo=t.idtipo and t.categoria_idcategoria=1");
+		$datos2=$this->consulta_lista();
+		$this->consulta("select count(*) 
+						from atractivo a, subtipo st, tipo t
+						where a.subtipo_idsubtipo=st.idsubtipo and st.tipo_idtipo=t.idtipo and t.categoria_idcategoria=2");
+		$datos3=$this->consulta_lista();
+
+		$this->consulta("select count(*) 
+						from atractivo a, subtipo st, tipo t
+						where a.subtipo_idsubtipo=st.idsubtipo and st.tipo_idtipo=t.idtipo and st.idsubtipo=16 and t.categoria_idcategoria=2");
+		$datos4=$this->consulta_lista();
+
+		$miIndicador = array("valorTotal"=>$datos1[0], "naturales"=>$datos2[0], "culturales"=>$datos3[0], "Gastronomia"=>$datos4[0]);
+
+		echo json_encode($miIndicador);
+
+		/*while ($row = mysqli_fetch_array($this->Consulta_ID)) {
 			$data[]=$row;
 		}
-		echo json_encode(array("sensores"=>$data));
+		echo json_encode(array("indicador"=>$data));*/
 	}
 	function consulta_busqueda_json(){
 		if($this->numcampos() > 0){

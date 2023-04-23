@@ -84,6 +84,9 @@ class DataTestModel{
   public function setCorreoadmin($correoadmin){
     $this->correoadmin = $correoadmin;
   }
+  public function setImagen($imagen){
+    $this->imagen = $imagen;
+  }
 
 
   public function setClima($clima){
@@ -320,7 +323,7 @@ class DataTestModel{
 
   public function AddPlace() {
     $miconexion=$this->conectarDb();
-    $resSQL=$miconexion->consulta("insert into atractivo values('','$this->nombres','$this->parroquia','$this->barrio','$this->calle','$this->numero','$this->transversal','$this->latitud','$this->longitud','$this->altura','$this->tipoadmin','$this->nombreadmin','$this->nombreinst','$this->cargoadmin','$this->telfadmin','$this->correoadmin','$this->tipo',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)");
+    $resSQL=$miconexion->consulta("insert into atractivo values('','$this->nombres','$this->parroquia','$this->barrio','$this->calle','$this->numero','$this->transversal','$this->latitud','$this->longitud','$this->altura','$this->tipoadmin','$this->nombreadmin','$this->nombreinst','$this->cargoadmin','$this->telfadmin','$this->correoadmin','$this->imagen','$this->tipo',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)");
     echo "insert into atractivo values('','$this->nombres','$this->parroquia','$this->barrio','$this->calle','$this->numero','$this->transversal','$this->latitud','$this->longitud','$this->altura','$this->tipoadmin','$this->nombreadmin','$this->nombreinst','$this->cargoadmin','$this->telfadmin','$this->correoadmin','$this->tipo',NULL)";
     //$this->Disconnect();
     return $resSQL;
@@ -345,14 +348,14 @@ class DataTestModel{
 
   public function UpdatePlaceInfo() {
     $miconexion=$this->conectarDb();
-    $resSQL=$miconexion->consulta("update atractivo set nombre='$this->nombres', parroquia_idparroquia='$this->parroquia', barrio='$this->barrio', calle='$this->calle',numero='$this->numero', transversal='$this->transversal', latitud='$this->latitud', longitud='$this->longitud', altura='$this->altura', tipoAdmin='$this->tipoadmin', nombreAdmin='$this->nombreadmin', nombreInstitucion='$this->nombreinst', cargoAdmin='$this->cargoadmin', telefonoAdmin='$this->telfadmin', correoAdmin='$this->correoadmin', subtipo_idsubtipo='$this->tipo' where idatractivo='$this->idcaracteristicas'");
+    $resSQL=$miconexion->consulta("update atractivo set nombre='$this->nombres', parroquia_idparroquia='$this->parroquia', barrio='$this->barrio', calle='$this->calle',numero='$this->numero', transversal='$this->transversal', latitud='$this->latitud', longitud='$this->longitud', altura='$this->altura', tipoAdmin='$this->tipoadmin', nombreAdmin='$this->nombreadmin', nombreInstitucion='$this->nombreinst', cargoAdmin='$this->cargoadmin', telefonoAdmin='$this->telfadmin', correoAdmin='$this->correoadmin',imagen='$this->imagen', subtipo_idsubtipo='$this->tipo' where idatractivo='$this->idcaracteristicas'");
   
     return $resSQL;
   }
 
   function GetData1() {
     $miconexion=$this->conectarDb();
-    $resSQL=$miconexion->consulta("SELECT a.idatractivo, a.nombre, t.nombre 'Tipo' ,st.nombre 'Subtipo',pr.nombre 'provincia',ca.nombre 'canton', pa.nombre 'Parroquia', a.tipoAdmin, a.nombreAdmin, a.caracteristicas_idcaracteristicas, a.accesibilidad_idaccesibilidad, a.turistica_idturistica, a.conservacion_idconservacion
+    $resSQL=$miconexion->consulta("SELECT a.idatractivo, a.nombre, t.nombre 'Tipo' ,st.nombre 'Subtipo',pr.nombre 'provincia',ca.nombre 'canton', pa.nombre 'Parroquia', a.tipoAdmin, a.nombreAdmin, a.caracteristicas_idcaracteristicas, a.accesibilidad_idaccesibilidad, a.turistica_idturistica, a.conservacion_idconservacion, a.parroquia_idparroquia, a.subtipo_idsubtipo
       FROM atractivo a, subtipo st, tipo t, parroquia pa, provincia pr, canton ca
       WHERE a.subtipo_idsubtipo=st.idsubtipo and st.tipo_idtipo=t.idtipo and a.parroquia_idparroquia=pa.idparroquia and pa.canton_idcanton=ca.idcanton and ca.provincia_idprovincia=pr.idprovincia");
 
@@ -388,9 +391,9 @@ class DataTestModel{
     return $resSQL;
   }
 
-  public function DelTest($testId) {
+  public function DelTest($testId,$idparr,$idtipo) {
     $miconexion=$this->conectarDb();
-    $resSQL=$miconexion->consulta("delete  from encuesta2 where id='$testId'");
+    $resSQL=$miconexion->consulta("delete  from atractivo where idatractivo='$testId' AND parroquia_idparroquia = '$idparr' AND subtipo_idsubtipo = '$idtipo'");
 
     //$this->Disconnect();
     return $resSQL;
