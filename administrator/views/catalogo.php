@@ -26,9 +26,9 @@
         for ($i = 1; $i <= count($dataList) - 1; $i++) {
             echo "<tr>";        
             echo "<td>" . $dataList[$i]['ID'] . "</td>";
-            echo "<td>" . $dataList[$i]['Provincia'] . "</td>";
-            echo "<td>" . $dataList[$i]['Canton'] . "</td>";
-            echo "<td>" . $dataList[$i]['Parroquia'] . "</td>";
+            echo "<td>" . utf8_encode($dataList[$i]['Provincia']) . "</td>";
+            echo "<td>" . utf8_encode($dataList[$i]['Canton']) . "</td>";
+            echo "<td>" . utf8_encode($dataList[$i]['Parroquia']) . "</td>";
             echo  "<td class='txtcentrado'><a href='parroquia_delete.php?parroquiaId=".$dataList[$i]['ID']."'><i class='fa-solid fa-ellipsis'></i></td>";
             echo "</tr>";
         }

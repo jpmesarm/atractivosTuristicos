@@ -58,13 +58,13 @@
   	for ($i = 1; $i <= count($dataList) - 1; $i++) {
 	    echo "<tr>";
 	    echo "<td>" . $dataList[$i]['idatractivo'] . "</td>";
-	    echo "<td>" . $dataList[$i]['nombre'] . "</td>";
-        echo "<td>" . $dataList[$i]['Tipo'] . "</td>";
-	    echo "<td>" . $dataList[$i]['Subtipo'] . "</td>";
-        echo "<td>" . $dataList[$i]['provincia'] . "</td>";
-        echo "<td>" . $dataList[$i]['canton'] . "</td>";
-	    echo "<td>" . $dataList[$i]['tipoAdmin'] . "</td>";
-	    echo "<td>" . $dataList[$i]['nombreAdmin'] . "</td>";
+	    echo "<td>" . utf8_encode($dataList[$i]['nombre']) . "</td>";
+        echo "<td>" . utf8_encode($dataList[$i]['Tipo']) . "</td>";
+	    echo "<td>" . utf8_encode($dataList[$i]['Subtipo']) . "</td>";
+        echo "<td>" . utf8_encode($dataList[$i]['provincia']) . "</td>";
+        echo "<td>" . utf8_encode($dataList[$i]['canton']) . "</td>";
+	    echo "<td>" . utf8_encode($dataList[$i]['tipoAdmin']) . "</td>";
+	    echo "<td>" . utf8_encode($dataList[$i]['nombreAdmin']) . "</td>";
         $retVal = ($dataList[$i]['caracteristicas_idcaracteristicas']==NULL) ? 'desactivado' : 'activado' ;
         $retVal2 = ($dataList[$i]['conservacion_idconservacion']==NULL) ? 'desactivado' : 'activado' ;
         echo  "<td class='txtcentrado'><a href='libraryView.php?action=test_detail&testId=".$dataList[$i]['idatractivo']."&idCar=".$dataList[$i]['caracteristicas_idcaracteristicas']."' class='$retVal'><i class='fa-solid fa-circle-info' title='Caracteristicas'></i></a></td>";

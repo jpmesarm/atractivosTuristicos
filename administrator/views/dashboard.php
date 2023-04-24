@@ -5,15 +5,28 @@
 	$control= new dashboard_controller();
     //$listaUser=$control->ResultTotal();
 ?>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="../../js/scriptMarkers.js"></script>
 <section class="detalleResultados">
 	<div class="grupoResult centrado valorVerde">
-		<h2><?php echo "230";?></h2>
+		<h2 id="indicador1"></h2>
 		<p>Total atractivos turisticos</p>
 	</div>
-	<div class="grupoResult">
-		<label >Encuestas por provincias: </label>
+	<div class="grupoResult centrado ">
+		<label >Atractivos Naturales: </label>
+        <h2 id="indicador2"></h2>
 	</div>
+    <div class="grupoResult centrado ">
+        <label >Atractivos Culturales: </label>
+        <h2 id="indicador3"></h2>
+    </div>
+    <div class="grupoResult centrado ">
+        <label >Eventos turísticos: </label>
+        <h2 id="indicador4"></h2>
+    </div>
 </section>
+
+<!--
 <section class="boxCharts">
 	<div class="itemBox">
 		<canvas id="myChart" ></canvas>
@@ -23,15 +36,13 @@
 	</div>
 </section>
 
-
+-->
 		
 
-</section>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-const ctx = document.getElementById('myChart');
+
+/*const ctx = document.getElementById('myChart');
 const ctx2 = document.getElementById('myChart2');
 const myChart = new Chart(ctx, {
     type: 'doughnut',
@@ -104,5 +115,5 @@ const myChart2 = new Chart(ctx2, {
             }
         }
     }
-});
+});*/
 </script>

@@ -25,10 +25,10 @@
 		     $group[$row['groups']][] = $row;
 		}*/
 		 foreach ($dataList as $key => $values){
-		     echo '<optgroup label="'.$key.'">';
+		     echo '<optgroup label="'.utf8_encode($key).'">';
 		     foreach ($values as $value) 
 		     {
-		         echo '<option value="'.$value['idparroquia'].'">'.$value['parroquia'].'</option>';
+		         echo '<option value="'.$value['idparroquia'].'">'.utf8_encode($value['parroquia']).'</option>';
 		     }
 		     echo '</optgroup>';
 		 }
@@ -42,10 +42,10 @@
 		echo "<select name='tipo'>";
 		echo "<option>Seleccione el tipo</option>";
 		 foreach ($tipolist as $key => $values){
-		     echo '<optgroup label="'.$key.'">';
+		     echo '<optgroup label="'.utf8_encode($key).'">';
 		     foreach ($values as $value) 
 		     {
-		         echo '<option value="'.$value['idsubtipo'].'">'.$value['subtipo'].'</option>';
+		         echo '<option value="'.$value['idsubtipo'].'">'.utf8_encode($value['subtipo']).'</option>';
 		     }
 		     echo '</optgroup>';
 		 }
